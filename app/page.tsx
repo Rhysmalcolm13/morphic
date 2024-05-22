@@ -1,14 +1,38 @@
-import { Chat } from '@/components/chat'
-import { nanoid } from 'ai'
-import { AI } from './actions'
+import ClientSection from '@/components/landing/client-section'
+import HeroSection from '@/components/landing/hero-section'
+import Particles from '@/components/magicui/particles'
+import { SphereMask } from '@/components/magicui/sphere-mask'
+import { SiteFooter } from '@/components/site-footer'
+import { SiteHeader } from '@/components/site-header'
+import type { Metadata, Viewport } from 'next'
 
-export const maxDuration = 60
+export const metadata: Metadata = {
+  title: 'Morphic Music',
+  description: 'Discover hidden gems in the music industry'
+}
 
-export default function Page() {
-  const id = nanoid()
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1
+}
+
+export default async function Page() {
   return (
-    <AI initialAIState={{ chatId: id, messages: [] }}>
-      <Chat id={id} />
-    </AI>
+    <>
+      <SiteHeader />
+      <HeroSection />
+      <ClientSection />
+      <SphereMask />
+      <SiteFooter />
+      <Particles
+        className="absolute inset-0 -z-10"
+        quantity={500}
+        ease={70}
+        size={0.05}
+        staticity={40}
+        color={'#638dff'}
+      />
+    </>
   )
 }

@@ -12,12 +12,21 @@ import { History as HistoryIcon } from 'lucide-react'
 import { HistoryList } from './history-list'
 import { Suspense } from 'react'
 import { HistorySkeleton } from './history-skelton'
+import { redirect } from 'next/navigation'
 
 type HistoryProps = {
   location: 'sidebar' | 'header'
+  currentSearchId: string
 }
 
-export function History({ location }: HistoryProps) {
+export default function History({ location, currentSearchId }: HistoryProps) {
+  'use client'
+  const handleClearHistory = () => {
+    // Clear history logic here
+    // After clearing history, redirect to the start of the search ID
+    redirect(`/main/${currentSearchId}`)
+  }
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -43,6 +52,7 @@ export function History({ location }: HistoryProps) {
             <HistoryList userId="anonymous" />
           </Suspense>
         </div>
+        <Button onClick={handleClearHistory}>Clear History</Button>
       </SheetContent>
     </Sheet>
   )

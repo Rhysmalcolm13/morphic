@@ -2,7 +2,7 @@ import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 import { CoreMessage, streamText as nonexperimental_streamText } from 'ai'
 import { Section } from '@/components/section'
 import { BotMessage } from '@/components/message'
-import { getModel } from '../utils'
+import { getModel } from '@/lib/utils/index'
 
 export async function writer(
   uiStream: ReturnType<typeof createStreamableUI>,

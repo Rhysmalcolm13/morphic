@@ -2,6 +2,8 @@ import { notFound, redirect } from 'next/navigation'
 import { Chat } from '@/components/chat'
 import { getChat } from '@/lib/actions/chat'
 import { AI } from '@/app/actions'
+import { SiteHeader } from '@/components/site-header'
+import { Sidebar } from '@/components/sidebar'
 
 export const maxDuration = 60
 
@@ -23,7 +25,7 @@ export default async function SearchPage({ params }: SearchPageProps) {
   const chat = await getChat(params.id, userId)
 
   if (!chat) {
-    redirect('/')
+    redirect('/main')
   }
 
   if (chat?.userId !== userId) {
@@ -31,13 +33,21 @@ export default async function SearchPage({ params }: SearchPageProps) {
   }
 
   return (
-    <AI
-      initialAIState={{
-        chatId: chat.id,
-        messages: chat.messages
-      }}
-    >
-      <Chat id={params.id} />
-    </AI>
+    <>
+      <SiteHeader />
+      <div style={{ display: 'flex flex-col', height: '100vh' }}>
+        <Sidebar isVisible={true} currentSearchId={''} />
+        <main>
+          <AI
+            initialAIState={{
+              chatId: chat.id,
+              messages: chat.messages
+            }}
+          >
+            <Chat id={params.id} />
+          </AI>
+        </main>
+      </div>
+    </>
   )
 }

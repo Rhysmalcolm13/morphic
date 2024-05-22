@@ -7,8 +7,8 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
 
-    --card: 0 0% 96.1%;
-    --card-foreground: 0 0% 45.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
@@ -30,17 +30,29 @@
 
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
+
+    /* Custom properties */
+    --navigation-height: 3.5rem;
+    --color-one: #638dff;
+    --color-two: #5145ffbd;
+    --color-three: #7aafff;
+
+    /* 
+    --color-one: #37ecba;
+    --color-two: #72afd3;
+    --color-three: #ff2e63;
+     */
   }
 
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 14.9%;
-    --card-foreground: 0 0% 63.9%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
 
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
@@ -62,7 +74,7 @@
 
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
-    --ring: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
   }
 }
 

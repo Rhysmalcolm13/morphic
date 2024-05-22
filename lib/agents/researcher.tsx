@@ -8,7 +8,7 @@ import {
 import { Section } from '@/components/section'
 import { BotMessage } from '@/components/message'
 import { getTools } from './tools'
-import { getModel } from '../utils'
+import { getModel } from '@/lib/utils/index'
 
 export async function researcher(
   uiStream: ReturnType<typeof createStreamableUI>,

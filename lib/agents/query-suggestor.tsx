@@ -3,7 +3,7 @@ import { CoreMessage, streamObject } from 'ai'
 import { PartialRelated, relatedSchema } from '@/lib/schema/related'
 import { Section } from '@/components/section'
 import SearchRelated from '@/components/search-related'
-import { getModel } from '../utils'
+import { getModel } from '../utils/index'
 
 export async function querySuggestor(
   uiStream: ReturnType<typeof createStreamableUI>,

@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import { OpenAI } from '@ai-sdk/openai'
+import { createOpenAI } from '@ai-sdk/openai'
 import { createGoogleGenerativeAI } from '@ai-sdk/google'
 import { createAnthropic } from '@ai-sdk/anthropic'
 
@@ -20,7 +20,7 @@ export function getModel() {
   //   return anthropic('claude-3-haiku-20240307')
   // }
 
-  const openai = new OpenAI({
+  const openai = createOpenAI({
     baseUrl: process.env.OPENAI_API_BASE, // optional base URL for proxies etc.
     apiKey: process.env.OPENAI_API_KEY, // optional API key, default to env property OPENAI_API_KEY
     organization: '' // optional organization

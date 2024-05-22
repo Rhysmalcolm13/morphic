@@ -61,7 +61,9 @@ export function ChatShare({ chatId, className }: ChatShareProps) {
     <div className={className}>
       <Dialog
         open={open}
-        onOpenChange={open => setOpen(open)}
+        onOpenChange={(open: boolean | ((prevState: boolean) => boolean)) =>
+          setOpen(open)
+        }
         aria-labelledby="share-dialog-title"
         aria-describedby="share-dialog-description"
       >

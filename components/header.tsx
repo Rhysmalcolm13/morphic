@@ -9,7 +9,7 @@ export const Header: React.FC = async () => {
     <header className="fixed w-full p-1 md:p-2 flex justify-between items-center z-10 backdrop-blur md:backdrop-blur-none bg-background/80 md:bg-transparent">
       <div>
         <a href="/">
-          <IconLogo className={cn('w-5 h-5')} />
+          <IconLogo className={cn('w-5 h-5')} src={''} alt={''} />
           <span className="sr-only">Morphic</span>
         </a>
       </div>
